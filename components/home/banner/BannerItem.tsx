@@ -13,7 +13,7 @@ const BannerItem: React.FC<BannerItemProps> = ({ title, subTitle, image }) => {
     return (
         <div className='2xl:h-[650px] xl:h-[500px] lg:h-[400px] sm:h-[300px] h-[200px] mb-10 relative'>
             <div className="block">
-                <Image alt='slider bg' src={image} fill />
+                <Image   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" alt='slider bg' src={image} fill />
             </div>
             <div
                 className='absolute z-[100] left-1/2 md:top-1/2 top-[30px] md:-translate-y-1/2 -translate-y-0 -translate-x-1/2 xl:max-w-[1200px] md:max-w-[720px] sm:max-w-[540px] sm:block hidden w-full mx-auto'>

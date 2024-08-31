@@ -25,7 +25,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ category, img }) => {
             className="flex flex-col items-center justify-center cursor-pointer"
             onClick={() => handleSelectCategory(category)}>
             <div className="sm:w-[250px] w-[200px] sm:h-[250px] h-[200px] rounded-full relative shadow">
-                <Image alt="img" src={img} objectFit="cover" fill className="rounded-full" />
+                <Image   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" alt="img" src={img} objectFit="cover" fill className="rounded-full" />
             </div>
             <div className="mt-5 text-xl font-medium">{category}</div>
         </div>

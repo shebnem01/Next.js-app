@@ -8,7 +8,7 @@ const EmptyCart = ({ title }: { title: string }) => {
   const router = useRouter();
   return (
     <div className='flex items-center flex-col gap-7 h-[500px] justify-center bg-bg-light'>
-      <Image alt='cart img' src={img} width={200} height={200} />
+      <Image   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" alt='cart img' src={img} width={200} height={200} />
       <div className='text-xl'>{title}</div>
       <div className='w-[400px]'>
         <Button btnLabel='Go to shopping' onSubmit={() => router.push('/')} /></div>

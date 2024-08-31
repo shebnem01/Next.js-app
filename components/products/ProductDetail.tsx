@@ -66,7 +66,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, currentUser }) =
                 <div className='sm:flex my-10 gap-6'>
                     <div className="border lg:w-[430px] sm:w-[50%] w-full sm:h-[400px] h-[250px] lg:h-[500px] border-border-gray py-6
                           px-10 flex items-center justify-center relative">
-                        <Image alt={product.name} fill src={product.image} />
+                        <Image alt={product.name} fill src={product.image}   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
                     </div>
 
                     <div className='lg:w-[600px] sm:w-[50%] w-full'>
