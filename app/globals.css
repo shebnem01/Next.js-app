@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-rating .MuiRating-icon {
+    font-size: 1.4rem; /* Adjust size as needed */
+  }
+  @media(max-width:576px){
+    .custom-rating .MuiRating-icon {
+        font-size: 1rem; /* Adjust size as needed */
+      }
+  }
+   .custom-scroll::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+   .custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+   .custom-scroll::-webkit-scrollbar-thumb {
+    background: #ccc; 
+  }
+  
+  /* Handle on hover */
+   .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #ccc; 
+  }
+ 
