@@ -12,7 +12,7 @@ const CartTableItem = ({ basketItem }: { basketItem: BasketProduct }) => {
         <li className='border-b py-3 flex  items-center justify-between relative'>
             <Link className='flex sm:gap-5  items-center' href={`/product/${basketItem.id}`}>
                 <div className="relative sm:w-[90px] w-[60px] sm:h-[90px] h-[60px] bg-white border border-border-gray p-2 me-4">
-                    <Image   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" objectFit='contain' fill alt={basketItem.name} src={basketItem.image} />
+                    <Image className='object-contain' fill alt={basketItem.name} src={basketItem.image} />
                 </div>
                 <div className='lg:w-[200px] w-[100px]'>
                     <div className='font-medium lg:text-normal sm:text-sm text-xs sm:leading-5 sm:mb-2 mb-1'>{basketItem.name}</div>

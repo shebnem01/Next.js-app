@@ -23,7 +23,7 @@ const SearchModal: React.FC<ProductsProps> = ({ products, onProductClick }) => {
           <li key={product?.id}>
             <div onClick={() => handleProductClick(product.id)} className='cursor-pointer flex py-5 gap-5 border-b border-border-gray'>
               <div className="bg-white border border-border-gray p-4 relative md:w-[90px] w-[70px] md:h-[90px] h-[70px]">
-                <Image   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" objectFit='contain' fill src={product?.image} alt='search product' />
+                <Image className='object-contain' fill src={product?.image} sizes="(max-width: 768px) 70px, 90px" alt='search product' />
               </div>
               <div>
                 <div className='lg:text-normal md:text-sm text-xs font-medium mb-1 capitalize'>{product?.name}</div>

@@ -7,14 +7,14 @@ import Button from "../common/button/Button";
 import { PiHeartLight, PiHeartFill } from "react-icons/pi";
 import useWishlist from "@/hooks/useWishlist";
 interface ProductsProps {
-  product:any;
+  product: any;
   currentUser?: User | null
 }
 
 const ProductCard: React.FC<ProductsProps> = ({ product, currentUser }) => {
 
   const router = useRouter();
-  const {wishList,wishlistFunc} = useWishlist();
+  const { wishList, wishlistFunc } = useWishlist();
 
 
   const isProductInWishlist = wishList?.some((item: any) => item.id == product.id);
@@ -36,7 +36,7 @@ const ProductCard: React.FC<ProductsProps> = ({ product, currentUser }) => {
       <div className={`p-3 sm:p-[22px] w-max relative ${product.inStock && 'border border-border-gray'}`}>
         {!product.inStock ? (
           <div className="-right-1 top-0 absolute sm:w-[160px] w-[100px] sm:h-[45px] h-[30px] z-[50]">
-            <Image   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" fill src='/stock.svg' alt='img stock' className="sm:w-[160px] w-[100px] sm:h-[45px] h-[30px]" />
+            <Image sizes="(max-width: 640px) 100px, 160px" fill src='/stock.svg' alt='img stock' className="sm:w-[160px] w-[100px] sm:h-[45px] h-[30px]" />
           </div>
         ) : (
           <button className="absolute right-1 top-1 rounded-full bg-blur-black flex ic justify-center p-1 z-[10]" onClick={handleAddWishlist}>
@@ -47,9 +47,16 @@ const ProductCard: React.FC<ProductsProps> = ({ product, currentUser }) => {
             }
           </button>
         )}
-        <div  className="relative sm:w-[226px] w-[164px] sm:h-[235px] h-[160px] flex justify-center items-center sm:px-9 px-6 mb-4">
-        <Image objectFit="cover" src={product.image} alt={product.name} fill   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
+        <div className="relative sm:w-[226px] w-[164px] sm:h-[235px] h-[160px] flex justify-center items-center sm:px-9 px-6 mb-4">
+          <Image
+            className="object-cover"
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 640px) 164px, (min-width: 641px) 226px" // Adjust based on viewport width
+          />
         </div>
+
         <div className="flex gap-1 items-center text-xs text-text-dark">
           {roundedReview && (
             <div className="flex items-center gap-1">

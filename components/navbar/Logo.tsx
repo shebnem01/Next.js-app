@@ -1,10 +1,17 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
+
 const Logo = () => {
     return (
-        <Link href='/' >
-           <Image   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" alt='img' width={100} height={100} src='/logo.webp'></Image>
+        <Link href='/' className='w-[100px] h-[25px] relative block'>
+            <Image 
+                alt='img' 
+                src='/logo.webp' 
+                fill 
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 100px" 
+            />
         </Link>
-    )
+    );
 }
-export default Logo
+
+export default Logo;
