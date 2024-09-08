@@ -1,4 +1,3 @@
-// Login.tsx
 'use client'
 import Link from 'next/link'
 import { useForm, SubmitHandler } from 'react-hook-form'
@@ -15,13 +14,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { schema } from '@/libs/validationSchema'
 import { FormData } from '@/types/types'
 
-const Login = ({ currentUser }: { currentUser: User|null }) => {
+const Login = ({ currentUser }: { currentUser: User | null }) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   if (currentUser) {
     router.push('/')
   }
-  
+
   const {
     register,
     handleSubmit,

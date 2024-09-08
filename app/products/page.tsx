@@ -3,7 +3,7 @@ import { getCurrentUser } from '../actions/getCurrentUser'
 const ProductsPage = async () => {
   const currentUser=await getCurrentUser();
   return (
-    <AllProducts currentUser={currentUser} />
+    <AllProducts />
   )
 }
 

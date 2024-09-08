@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import ProductCounter from './ProductCounter';
 import Description from './Description';
 import { useCallback, useState } from 'react';
-import ReviewModal from '../modal/ReviewModal';
 import Reviews from './Reviews';
 import PageContainer from '../containers/PageContainer';
 import Button from '../common/button/Button';
@@ -117,11 +116,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, currentUser }) =
                        text-normal sm:text-[22px] leading-[26px] font-medium p-1 sm:p-3 cursor-pointer border-b-2 border-border-gray`}>Reviews({product.reviews.length})</div>
                     </div>
                     {showTab === 'description' && <Description description={product.description} />}
-                    {showTab === 'reviews' && <Reviews currentUser={currentUser} reviews={product.reviews} />}
+                    {showTab === 'reviews' && <Reviews product={product} currentUser={currentUser} reviews={product.reviews} />}
                 </PageContainer>
             </div>
 
-            <ReviewModal currentUser={currentUser} product={product} />
+           
         </>
     )
 }

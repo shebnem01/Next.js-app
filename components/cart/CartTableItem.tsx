@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { BsFillTrash3Fill } from "react-icons/bs";
-import { useAppDispatch } from '@/redux/hook';
 import Link from 'next/link';
 import { BasketProduct } from '@/types/types';
 import CartCounter from './CartCounter';
@@ -20,7 +19,7 @@ const CartTableItem = ({ basketItem }: { basketItem: BasketProduct }) => {
                 </div>
             </Link>
 
-            <CartCounter basketProduct={basketItem} />
+            <CartCounter quantity={basketItem.quantity} id={basketItem.id} />
             <div className='mx-5 lg:text-lg md:text-normal text-sm font-medium'>
                 $ {basketItem.price * basketItem.quantity}
             </div>

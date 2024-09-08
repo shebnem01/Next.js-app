@@ -8,7 +8,6 @@ import useBasket from '@/hooks/useBasket'
 
 const CartClient = () => {
     const { clearBasket, basketList } = useBasket();
- 
     if (basketList?.length == 0) return <EmptyCart title='Your cart is empty ' />
 
     return (

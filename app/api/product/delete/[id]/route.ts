@@ -22,3 +22,13 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
     return NextResponse.json({ error: 'Ürün silinemedi' }, { status: 500 });
   }
 }
+
+DELETE()
+  .then(async () => {
+    await prisma.$disconnect()
+  })
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })

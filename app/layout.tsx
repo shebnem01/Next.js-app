@@ -4,7 +4,6 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { getCurrentUser } from "./actions/getCurrentUser";
 import Navbar from "@/components/navbar/Navbar";
-import ReduxProvider from "@/providers/ReduxProvider";
 import Footer from "@/components/footer/Footer";
 import { BasketContextProvider } from "@/hooks/useBasket";
 import { WishlistContextProvider } from "@/hooks/useWishlist";
@@ -26,17 +25,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReduxProvider>
-          <BasketContextProvider>
-            <WishlistContextProvider>
-              <Navbar currentUser={currentUser} />
-              <Toaster position="top-center" reverseOrder={false} />
-              {children}
-              <Footer />
-            </WishlistContextProvider>
-          </BasketContextProvider>
-        </ReduxProvider>
-
+        <BasketContextProvider>
+          <WishlistContextProvider>
+            <Navbar currentUser={currentUser} />
+            <Toaster position="top-center" reverseOrder={false} />
+            {children}
+            <Footer />
+          </WishlistContextProvider>
+        </BasketContextProvider>
       </body>
     </html>
   );
